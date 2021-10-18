@@ -41,10 +41,10 @@ class FamilyStructure:
         # fill this method and update the return
         new_member = {
             "id": self._generateId(),
-            "first_name": member.first_name,
-            "last_name": last_name,
-            "age": member.age,
-            "lucky_numbers": member.lucky_numbers
+            "first_name": member["first_name"],
+            "last_name": "Jackson",
+            "age": member["age"],
+            "lucky_numbers": member["lucky_numbers"]
         }
         self._members.append(new_member)
         return new_member

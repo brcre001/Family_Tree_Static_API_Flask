@@ -43,7 +43,10 @@ def get_one_member(member_id):
     return jsonify(response_body), 200
 
 @app.route('/member', methods=['POST'])
-def add_new_member(member):
+def add_new_member():
+    # To make this request you need to pass
+    # first_name, age, and lucky_numbers in the request body
+    member = request.get_json()
     new_member = jackson_family.add_member(member)
     response_body = new_member
     return jsonify(response_body), 200
