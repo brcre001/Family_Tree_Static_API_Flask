@@ -39,15 +39,44 @@ class FamilyStructure:
 
     def add_member(self, member):
         # fill this method and update the return
-        pass
+        new_member = {
+            "id": self._generateId(),
+            "first_name": member.first_name,
+            "last_name": last_name,
+            "age": member.age,
+            "lucky_numbers": member.lucky_numbers
+        }
+        self._members.append(new_member)
+        return new_member
 
     def delete_member(self, id):
         # fill this method and update the return
-        pass
+        removed_member = {}
+        for member in self._members:
+            if member["id"] == id:
+                removed_member = member
+                self._members.remove(member)
+            else:
+                pass
+        if removed_member == {}:
+            return "No member found with that id. No member was deleted"
+        elif removed_member != {}:
+            return "This member was removed", removed_member
+        else:
+            return "There was an error"
 
     def get_member(self, id):
         # fill this method and update the return
-        pass
+        new_member = {}
+        for member in self._members:
+            if member["id"] == id:
+                new_member = member
+            else:
+                pass
+        if new_member == {}:
+            new_member = "A member with this id doesn't exist"
+
+        return new_member
 
     # this method is done, it returns a list with all the family members
     def get_all_members(self):
